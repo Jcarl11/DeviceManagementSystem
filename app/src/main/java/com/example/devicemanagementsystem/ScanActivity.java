@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,17 +19,18 @@ import com.google.zxing.Result;
 
 public class ScanActivity extends AppCompatActivity {
 
-    private CodeScannerView codeScannerView;
+    @BindView(R.id.scanner_view) CodeScannerView  codeScannerView;
     private CodeScanner codeScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
+        ButterKnife.bind(this);
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, 50);
         }
-        codeScannerView = findViewById(R.id.scanner_view);
+
         codeScanner = new CodeScanner(this, codeScannerView);
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override

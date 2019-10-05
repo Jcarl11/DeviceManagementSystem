@@ -1,6 +1,9 @@
 package com.example.devicemanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,17 +14,22 @@ import com.parse.Parse;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         initializeParse();
-
     }
 
-    public void scannerCardClicked(View view) {
+    @OnClick(R.id.cardview_scanner)
+    void scannerCardClicked() {
         startActivity(new Intent(this, ScanActivity.class));
+    }
+
+    @OnClick(R.id.cardview_generate)
+    void generateClicked() {
+        startActivity(new Intent(this, GenerateActivity.class));
     }
     private void initializeParse() {
         Parse.initialize(new Parse.Configuration.Builder(this)

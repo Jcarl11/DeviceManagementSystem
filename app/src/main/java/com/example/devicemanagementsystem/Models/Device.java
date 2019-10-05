@@ -8,6 +8,7 @@ public class Device {
     private String deviceName;
     private String deviceBrand;
     private DeviceType deviceType;
+    private Department department;
     private JSONArray tags;
 
     public String getObjectId() {
@@ -40,6 +41,14 @@ public class Device {
 
     public void setDeviceType(DeviceType deviceType) {
         this.deviceType = deviceType;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public JSONArray getTags() {

@@ -27,20 +27,19 @@
 
     <GridLayout
         android:id="@+id/mainGrid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:columnCount="2"
         android:rowCount="3"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_gravity="center">
 
-        <!-- Row 1 -->
-
-        <!-- Column 1 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="135dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
@@ -48,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Assets"
+                android:text="Items"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
@@ -56,13 +55,13 @@
                 android:textStyle="bold"/>
         </androidx.cardview.widget.CardView>
 
-        <!-- Column 2 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_scanner"
-            android:layout_width="135dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="16dp"
-            android:onClick="scannerCardClicked"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -79,18 +78,17 @@
         </androidx.cardview.widget.CardView>
 
 
-        <!-- Row 2 -->
-
-        <!-- Column 1 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="135dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             android:layout_margin="16dp">
 
             <TextView
-                android:text="Delivery"
+                android:text="Logs"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
@@ -101,10 +99,33 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Column 2 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="135dp"
-            android:layout_height="100dp"
+            android:id="@+id/cardview_generate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <TextView
+                android:text="Generate"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
@@ -121,13 +142,11 @@
 
         </androidx.cardview.widget.CardView>
 
-
-        <!-- Row 2 -->
-
-        <!-- Column 1 -->
         <androidx.cardview.widget.CardView
-            android:layout_width="135dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
@@ -143,6 +162,8 @@
                 android:layout_height="wrap_content" />
 
         </androidx.cardview.widget.CardView>
+
+
 
 
     </GridLayout>
