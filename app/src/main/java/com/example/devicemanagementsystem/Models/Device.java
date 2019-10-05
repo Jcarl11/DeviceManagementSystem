@@ -7,9 +7,8 @@ public class Device {
     private String objectId;
     private String deviceName;
     private String deviceBrand;
-    private DeviceType deviceType;
-    private Department department;
-    private JSONArray tags;
+    private String deviceType;
+    private String department;
 
     public String getObjectId() {
         return objectId;
@@ -35,27 +34,19 @@ public class Device {
         this.deviceBrand = deviceBrand;
     }
 
-    public DeviceType getDeviceType() {
+    public String getDeviceType() {
         return deviceType;
     }
 
-    public void setDeviceType(DeviceType deviceType) {
+    public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
     }
 
-    public Department getDepartment() {
+    public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(String department) {
         this.department = department;
-    }
-
-    public JSONArray getTags() {
-        return tags;
-    }
-
-    public void setTags(JSONArray tags) {
-        this.tags = tags;
     }
 }

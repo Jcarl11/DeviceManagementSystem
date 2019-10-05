@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
 import com.parse.Parse;
+import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initializeParse();
+        if(ParseUser.getCurrentUser() == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 
     @OnClick(R.id.cardview_scanner)
