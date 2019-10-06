@@ -7,19 +7,18 @@ import android.content.DialogInterface;
 import dmax.dialog.SpotsDialog;
 
 public class Loading {
-    private static final Loading ourInstance = new Loading();
 
+    private static final Loading ourInstance = new Loading();
     public static Loading getInstance() {
         return ourInstance;
     }
-
-    private Loading() { }
+    private Loading() {}
 
     public AlertDialog showLoading(Context ctx) {
         AlertDialog dialog = new SpotsDialog.Builder()
                 .setMessage("Please wait")
                 .setContext(ctx)
-                .setCancelable(true)
+                .setCancelable(false)
                 .build();
         return dialog;
     }

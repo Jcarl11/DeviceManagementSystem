@@ -20,11 +20,13 @@ public class LoginTask extends AsyncTask<Void, Void, String> {
     private Context context;
     private String username;
     private String password;
+    AlertDialog dialog;
 
     public LoginTask(Context context, String username, String password) {
         this.context = context;
         this.username = username;
         this.password = password;
+        dialog = Loading.getInstance().showLoading(context);
     }
 
     @Override
@@ -47,12 +49,12 @@ public class LoginTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPreExecute() {
-        Loading.getInstance().showLoading(context).show();
+        dialog.show();
     }
 
     @Override
     protected void onPostExecute(String s) {
-        Loading.getInstance().showLoading(context).dismiss();
+        dialog.dismiss();
         if(s == GlobalConstants.LOGIN_FAILED) {
             Loading.getInstance().showAlertBox("Result", "Wrong credentials", context);
             return;

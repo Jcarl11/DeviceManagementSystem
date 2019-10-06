@@ -17,13 +17,10 @@ public class JSONUtils {
         this.source = source;
         HashMap<String, String> result = new HashMap<>();
         try {
-            result.put("DEVICE_ID", source.getString("DEVICE_ID"));
-            result.put("DEVICE_NAME", source.getString("DEVICE_NAME"));
-            result.put("DEVICE_BRAND", source.getString("DEVICE_BRAND"));
-            result.put("DEVICE_TYPE", source.getString("DEVICE_TYPE"));
-            result.put("DEVICE_IN", source.getString("DEVICE_IN"));
-            result.put("DEVICE_OUT", source.getString("DEVICE_OUT"));
-            result.put("DEVICE_DEPARTMENT", source.getString("DEVICE_DEPARTMENT"));
+            result.put(GlobalConstants.DEVICE_NAME, source.getString(GlobalConstants.DEVICE_NAME));
+            result.put(GlobalConstants.DEVICE_BRAND, source.getString(GlobalConstants.DEVICE_BRAND));
+            result.put(GlobalConstants.DEVICE_TYPE, source.getString(GlobalConstants.DEVICE_TYPE));
+            result.put(GlobalConstants.DEVICE_DEPARTMENT, source.getString(GlobalConstants.DEVICE_DEPARTMENT));
         }catch (Exception ex) {
             ex.printStackTrace();
         }

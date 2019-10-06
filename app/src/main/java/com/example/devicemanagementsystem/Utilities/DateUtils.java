@@ -15,7 +15,7 @@ public class DateUtils {
     private DateFormat simpleFormat;
 
     public DateUtils() {
-        timeZone = TimeZone.getTimeZone("UTC");
+        timeZone = TimeZone.getDefault();
         //dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); //Parse cloud date format
         dateFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
         simpleFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
