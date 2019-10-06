@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.devicemanagementsystem.MainActivity;
+import com.example.devicemanagementsystem.Models.UserModel;
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
 import com.example.devicemanagementsystem.Utilities.Loading;
 import com.parse.ParseException;
@@ -18,21 +19,19 @@ import dmax.dialog.SpotsDialog;
 public class LoginTask extends AsyncTask<Void, Void, String> {
     private static final String TAG = "LoginTask";
     private Context context;
-    private String username;
-    private String password;
+    private UserModel userModel;
     AlertDialog dialog;
 
-    public LoginTask(Context context, String username, String password) {
+    public LoginTask(Context context, UserModel userModel) {
         this.context = context;
-        this.username = username;
-        this.password = password;
+        this.userModel = userModel;
         dialog = Loading.getInstance().showLoading(context);
     }
 
     @Override
     protected String doInBackground(Void... voids) {
         try {
-            ParseUser user = ParseUser.logIn(username, password);
+            ParseUser user = ParseUser.logIn(userModel.getUsername(), userModel.getPassword());
             if(user != null) {
                 Log.d(TAG, "doInBackground: Logged in!");
                 return GlobalConstants.LOGIN_SUCCESS;

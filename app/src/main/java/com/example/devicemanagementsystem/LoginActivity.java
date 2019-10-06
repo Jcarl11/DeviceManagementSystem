@@ -5,10 +5,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 
+import com.example.devicemanagementsystem.Models.UserModel;
 import com.example.devicemanagementsystem.Tasks.LoginTask;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -16,6 +18,7 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
+    private UserModel userModel = new UserModel();
     @BindView(R.id.login_username) TextInputLayout login_username;
     @BindView(R.id.login_password) TextInputLayout login_password;
     @BindView(R.id.login_submit) Button login_submit;
@@ -32,17 +35,19 @@ public class LoginActivity extends AppCompatActivity {
     void submitClicked() {
         String username = login_username.getEditText().getText().toString();
         String password = login_password.getEditText().getText().toString();
-
+        userModel.setUsername(username);
+        userModel.setPassword(password);
 
         if(!check(login_username) | !check(login_password)) {
             return;
         }
-        new LoginTask(LoginActivity.this, username, password).execute((Void)null);
+
+        new LoginTask(this, userModel).execute((Void) null);
     }
 
     @OnClick(R.id.login_register)
     void registerClicked() {
-
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     private boolean check(TextInputLayout textInputLayout) {

@@ -143,18 +143,20 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_logout"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_margin="16dp"
+            android:backgroundTint="#d10000"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
             <TextView
-                android:text="About Us"
+                android:text="Logout"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"

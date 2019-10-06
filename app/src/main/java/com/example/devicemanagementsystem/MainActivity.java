@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.devicemanagementsystem.Tasks.LogoutTask;
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
 import com.parse.Parse;
 import com.parse.ParseUser;
@@ -33,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.cardview_scanner)
     void scannerCardClicked() {
         startActivity(new Intent(this, ScanActivity.class));
+    }
+
+    @OnClick(R.id.cardview_logout)
+    void logoutClicked() {
+        new LogoutTask(this).execute((Void)null);
     }
 
     @OnClick(R.id.cardview_generate)
