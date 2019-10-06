@@ -1,16 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GenerateActivity"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/generate_text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="507dp"
-        android:inputType="textMultiLine" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
 
-</LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/generate_devicename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#dedede"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Device Name"
+                android:inputType="text"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/generate_devicebrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#dedede"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Device Brand"
+                android:inputType="text"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/generate_devicetype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_hint="Device Type"
+            app:ms_enableFloatingLabel="true"
+            app:ms_floatingLabelText="Device Type"
+            app:ms_hintColor="#dedede"
+            app:ms_arrowColor="#dedede"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="#dedede"
+            android:layout_marginTop="10dp" />
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/generate_devicedepartment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_hint="Device Type"
+            app:ms_enableFloatingLabel="true"
+            app:ms_floatingLabelText="Device Department"
+            app:ms_hintColor="#dedede"
+            app:ms_arrowColor="#dedede"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="#dedede"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENERATE"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_style"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/generate_generateddata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#dedede"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Json Data"
+                android:inputType="none"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.devicemanagementsystem.Utilities;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -31,7 +32,13 @@ public class JSONUtils {
     }
 
     public String generateJSON(HashMap<String, String> mySource) {
-        return new JSONObject(mySource).toString();
+        String stringFormat = new String();
+        try {
+            stringFormat = new JSONObject(mySource).toString(2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return stringFormat;
     }
 
     public JSONObject getSource() {

@@ -7,6 +7,7 @@ import butterknife.OnClick;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
@@ -14,17 +15,19 @@ import com.parse.Parse;
 import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initializeParse();
-        if(ParseUser.getCurrentUser() == null) {
+        ParseUser user = ParseUser.getCurrentUser();
+        if(user == null) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
+        
     }
 
     @OnClick(R.id.cardview_scanner)

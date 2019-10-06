@@ -22,6 +22,10 @@ public class GlobalConstants {
     public static final String COL_DEVICE_BRAND = "DEVICE_BRAND";
     public static final String COL_DEVICE_TYPE = "DEVICE_TYPE";
     public static final String COL_DEVICE_DEPARTMENT = "DEPARTMENT";
+    public static final String[] departmentsList = {"IT", "HR", "ACCOUNTING", "MANAGEMENT"};
+    public static final String[] deviceTypes = {"COMPUTER", "LAPTOP", "MOUSE", "KEYBOARD", "MONITOR"};
 
+    public static final String LOGIN_SUCCESS = "LOGIN_SUCCESS";
+    public static final String LOGIN_FAILED = "LOGIN_FAILED";
 
 }

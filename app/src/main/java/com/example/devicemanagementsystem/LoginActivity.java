@@ -6,14 +6,16 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
+import com.example.devicemanagementsystem.Tasks.LoginTask;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private static final String TAG = "LoginActivity";
     @BindView(R.id.login_username) TextInputLayout login_username;
     @BindView(R.id.login_password) TextInputLayout login_password;
     @BindView(R.id.login_submit) Button login_submit;
@@ -28,13 +30,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_submit)
     void submitClicked() {
-        String username = login_username.getEditText().toString();
-        String password = login_password.getEditText().toString();
+        String username = login_username.getEditText().getText().toString();
+        String password = login_password.getEditText().getText().toString();
+
 
         if(!check(login_username) | !check(login_password)) {
             return;
         }
-
+        new LoginTask(LoginActivity.this, username, password).execute((Void)null);
     }
 
     @OnClick(R.id.login_register)
