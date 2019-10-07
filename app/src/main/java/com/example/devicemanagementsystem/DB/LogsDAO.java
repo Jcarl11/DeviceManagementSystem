@@ -7,7 +7,9 @@ import com.example.devicemanagementsystem.Utilities.DateUtils;
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LogsDAO implements IOperations<Logs>{
@@ -50,5 +52,33 @@ public class LogsDAO implements IOperations<Logs>{
         Log.d(TAG, "insertAll: Total Operations: " + objectList.size());
         Log.d(TAG, "insertAll: Failed operations: " + String.valueOf(objectList.size() - successfulOperations));
         return successfulOperations;
+    }
+
+    @Override
+    public List<Logs> getAll() {
+        Log.d(TAG, "getAll: Started..");
+        List<Logs> logsList = new ArrayList<>();
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery(GlobalConstants.DB_LOGS);
+        try {
+            List<ParseObject> parseObjectList =  parseQuery.find();
+            Log.d(TAG, "getAll: Retrieved finished");
+            for(ParseObject parseObject : parseObjectList) {
+                Logs logs = new Logs();
+                logs.setObjectId(parseObject.getObjectId());
+                logs.setUserUsername(parseObject.getString(GlobalConstants.USER_USERNAME));
+                logs.setUserEmail(parseObject.getString(GlobalConstants.USER_EMAIL));
+                logs.setDeviceName(parseObject.getString(GlobalConstants.COL_DEVICE_NAME));
+                logs.setDeviceBrand(parseObject.getString(GlobalConstants.COL_DEVICE_BRAND));
+                logs.setDeviceType(parseObject.getString(GlobalConstants.COL_DEVICE_TYPE));
+                logs.setDeviceDepartment(parseObject.getString(GlobalConstants.COL_DEVICE_DEPARTMENT));
+                logs.setDeviceStatus(parseObject.getString(GlobalConstants.DEVICE_STATUS));
+                logs.setTimestamp(dateUtils.toISO8601String(parseObject.getDate(GlobalConstants.TIMESTAMP)));
+                logsList.add(logs);
+            }
+        } catch (ParseException e) {
+            Log.d(TAG, "getAll: Exception: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return logsList;
     }
 }

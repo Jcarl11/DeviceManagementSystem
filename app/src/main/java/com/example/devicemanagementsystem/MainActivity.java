@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.devicemanagementsystem.Tasks.FetchDevicesTask;
 import com.example.devicemanagementsystem.Tasks.LogoutTask;
 import com.example.devicemanagementsystem.Utilities.GlobalConstants;
 import com.parse.Parse;
@@ -45,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
     void generateClicked() {
         startActivity(new Intent(this, GenerateActivity.class));
     }
+
+    @OnClick(R.id.cardview_devicelist)
+    void deviceListClicked() {
+        startActivity(new Intent(this, DeviceListActivity.class));
+    }
+
+    @OnClick(R.id.cardview_logs)
+    void logsClicked() {
+        startActivity(new Intent(this, LogsActivity.class));
+    }
+
     private void initializeParse() {
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId(getString(R.string.back4app_app_id))

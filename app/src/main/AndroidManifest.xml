@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".DeviceListActivity"></activity>
+        <activity android:name=".LogsActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".GenerateActivity" />
         <activity android:name=".ScanOperationActivity" />

@@ -36,6 +36,7 @@
         android:layout_gravity="center">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_devicelist"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -47,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Items"
+                android:text="Device\nList"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
@@ -79,6 +80,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_logs"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -110,7 +112,7 @@
             app:cardCornerRadius="8dp">
 
             <TextView
-                android:text="Generate"
+                android:text="Generate\nQR Data"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
