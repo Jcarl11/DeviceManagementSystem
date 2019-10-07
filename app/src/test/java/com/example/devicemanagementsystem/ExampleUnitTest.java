@@ -1,5 +1,7 @@
 package com.example.devicemanagementsystem;
 
+import android.os.Environment;
+
 import com.example.devicemanagementsystem.Utilities.DateUtils;
 
 import org.junit.Test;
@@ -25,5 +27,11 @@ public class ExampleUnitTest {
 
         String result = dateUtils.toISO8601String(new Date());
         assertEquals("2019", result);
+    }
+
+    @Test
+    public void testPath() {
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+        assertEquals("my/path", path);
     }
 }

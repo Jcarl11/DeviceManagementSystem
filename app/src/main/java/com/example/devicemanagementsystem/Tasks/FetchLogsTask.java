@@ -48,4 +48,6 @@ public class FetchLogsTask extends AsyncTask<Void, Void, List<Logs>> {
         logsAdapter = new LogsAdapter(context, logs);
         recyclerView.setAdapter(logsAdapter);
     }
+
+
 }

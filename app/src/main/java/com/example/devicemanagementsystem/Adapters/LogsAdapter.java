@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 public class LogsAdapter extends RecyclerView.Adapter<LogsAdapter.LogsViewHolder> {
 
     private Context context;
-    private List<Logs> logsList;
+    private static List<Logs> logsList;
 
     public LogsAdapter(Context context, List<Logs> logsList) {
         this.context = context;
@@ -77,5 +77,9 @@ public class LogsAdapter extends RecyclerView.Adapter<LogsAdapter.LogsViewHolder
             adapter_logs_status = (TextView) itemView.findViewById(R.id.adapter_logs_status);
             adapter_logs_timestamp = (TextView) itemView.findViewById(R.id.adapter_logs_timestamp);
         }
+    }
+
+    public static List<Logs> getLogsList() {
+        return logsList;
     }
 }

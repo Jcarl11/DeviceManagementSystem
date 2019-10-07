@@ -7,6 +7,25 @@
     tools:context=".LogsActivity"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp">
+
+        <Button
+            android:id="@+id/logs_export"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Export to csv"
+            android:background="@drawable/btn_style"
+            android:textColor="@android:color/white"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/logs_recyclerview"
         android:layout_width="match_parent"
