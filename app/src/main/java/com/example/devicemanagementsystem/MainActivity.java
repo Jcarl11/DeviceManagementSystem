@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, LogsActivity.class));
     }
 
+    @OnClick(R.id.cardview_aboutus)
+    void aboutusClicked() {
+        startActivity(new Intent(this, AboutActivity.class));
+    }
     private void initializeParse() {
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId(getString(R.string.back4app_app_id))

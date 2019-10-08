@@ -3,4 +3,35 @@
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
     <string name="back4app_app_id">HNYU6TDkQahAMA3WRK1FbzWkZCLFKYCk97UeZsZE</string>
     <string name="back4app_client_key">MmJps8PgA6naFgNPAmMb4XmFEb3Mg9JVLGJi0N9T</string>
+    <string name="aboutus_header" >
+        Spend quality time with your loved ones without leaving your home. Today, family-sized Internet connections are within your reach.
+    </string>
+
+    <string name="aboutus_body">
+        PLDT HOME is the country’s leading broadband and digital services provider that allows seamless, simultaneous streaming in all your devices at home. Enabling moments that bring your family closer together, PLDT HOME offers Fibr, DSL, Ultera and Telpad services.
+    </string>
+    
+    <string name="aboutus_body2">
+        PLDT brings you the finest options when it comes to telecommunications solutions. Whether you need high-speed Internet connection, a landline or a combination of both, PLDT HOME has the right package for you.
+    </string>
+
+    <string name="aboutus_ourbelief">
+        The strongest connections for the family are at home. We believe that families deserve only the best telecommunications and multimedia services to stay connected and access quality entertainment at home.
+    </string>
+
+    <string name="aboutus_ourmission">
+        We aspire to be the service provider of choice of every Filipino family by delivering a digitally connected experience in every household. As we humanize technology, we keep families connected in a meaningful way. And by providing a compelling suite of multimedia services and solutions, we strengthen relationships within the family.
+    </string>
+
+    <string name="aboutus_ourmission2">
+        As a result, consumers show their loyalty and affinity, helping PLDT HOME achieve market dominance and value creation which allow people, shareholders and communities to prosper.
+    </string>
+
+    <string name="aboutus_companyprofile">
+        Founded on November 28, 1928, the Philippine Long Distance Telephone Company (PLDT) is the leading telecommunications and internet service provider in the Philippines. Through its three principal business groups—fixed line, wireless and information and communication technology, PLDT offers the largest and most diverse range of telecommunications services across the Philippines’ most extensive fiber optic backbone and fixed line, cellular and satellite networks.
+    </string>
+
+    <string name="aboutus_companyprofile2">
+        PLDT is listed on the Philippine Stock Exchange (PSE:TEL) and its American Depositary Shares are listed on the New York Stock Exchange (NYSE:PHI). PLDT has one of the largest market capitalizations among Philippine-listed companies.
+    </string>
 </resources>

@@ -124,6 +124,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_aboutus"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -133,7 +134,7 @@
             app:cardCornerRadius="8dp">
 
             <TextView
-                android:text="Contact Us"
+                android:text="About Us"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
