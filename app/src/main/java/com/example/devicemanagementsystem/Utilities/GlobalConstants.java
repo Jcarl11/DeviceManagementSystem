@@ -36,6 +36,8 @@ public class GlobalConstants {
     public static final String DEVICE_IN = "IN";
     public static final String DEVICE_OUT = "OUT";
 
+    public static final String PLDT_HOME = "https://m.pldthome.com";
+    public static final String PLDT_ABOUTUS = "http://pldt.com/about-us";
 
 
     public static final String LOGGEDUSER_USERNAME = ParseUser.getCurrentUser().getUsername();

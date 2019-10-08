@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="#ebedeb">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#e8e7e6"
+        android:backgroundTint="@android:color/white"
         android:layout_marginBottom="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         app:cardElevation="8dp"
         app:contentPadding="5dp"
         app:cardCornerRadius="8dp">
@@ -119,9 +122,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
-
     </androidx.cardview.widget.CardView>
 
 

@@ -6,9 +6,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.devicemanagementsystem.Tasks.FetchDevicesTask;
 import com.example.devicemanagementsystem.Tasks.LogoutTask;
@@ -18,6 +20,9 @@ import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+
+    @BindView(R.id.pldt_logo) ImageView pldt_logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.cardview_aboutus)
     void aboutusClicked() {
         startActivity(new Intent(this, AboutActivity.class));
+    }
+
+    @OnClick(R.id.pldt_logo)
+    void pldtlogoClicked() {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GlobalConstants.PLDT_HOME));
+        startActivity(browserIntent);
     }
     private void initializeParse() {
         Parse.initialize(new Parse.Configuration.Builder(this)
