@@ -13,14 +13,17 @@ public class DateUtils {
     private TimeZone timeZone;
     private DateFormat dateFormat; //Parse cloud date format
     private DateFormat simpleFormat;
+    private DateFormat csvCompatibleFormat;
 
     public DateUtils() {
         timeZone = TimeZone.getDefault();
         //dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); //Parse cloud date format
         dateFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
         simpleFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss");
+        csvCompatibleFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         dateFormat.setTimeZone(timeZone);
         simpleFormat.setTimeZone(timeZone);
+        csvCompatibleFormat.setTimeZone(timeZone);
     }
 
     public Date toISO8601Date(String dateString) {
